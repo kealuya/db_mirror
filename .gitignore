@@ -16,3 +16,8 @@
 .idea/vcs.xml
 .idea/workspace.xml
 logs
+test.go
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+db_bak.db
+db_bak.db
