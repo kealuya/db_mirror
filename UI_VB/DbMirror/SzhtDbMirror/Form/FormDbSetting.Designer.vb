@@ -27,7 +27,7 @@ Partial Class FormDbSetting
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(176, 149)
+        Me.Button1.Location = New System.Drawing.Point(293, 180)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(162, 95)
         Me.Button1.TabIndex = 0

@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Runtime.InteropServices
 Imports FontAwesome.Sharp
 
 Public Class Form2
@@ -11,6 +12,13 @@ Public Class Form2
 
         ' 此调用是设计器所必需的。
         InitializeComponent()
+        '开车
+        PictureBox_kaiche1.Visible = False
+        PictureBox_kaiche2.Visible = False
+        PictureBox_kaiche3.Visible = False
+        PictureBox_kaiche4.Visible = False
+        PictureBox_kaiche5.Visible = False
+        PictureBox2.Visible = True
 
         ' 在 InitializeComponent() 调用之后添加任何初始化。
         leftBorderBtn = New Panel
@@ -115,14 +123,17 @@ Public Class Form2
 
     Private Sub strategy_Click(sender As Object, e As EventArgs) Handles strategy.Click
         ActivateButton(sender, RGBColors.color2)
+        OpenChildForm(New FormStrategy)
     End Sub
 
     Private Sub backup_Click(sender As Object, e As EventArgs) Handles backup.Click
         ActivateButton(sender, RGBColors.color3)
+        OpenChildForm(New FormBackup)
     End Sub
 
     Private Sub state_Click(sender As Object, e As EventArgs) Handles state.Click
         ActivateButton(sender, RGBColors.color6)
+        OpenChildForm(New FormState)
     End Sub
 
     Dim x1, x2, y1, y2 As Integer
@@ -135,7 +146,8 @@ Public Class Form2
 
 
     '鼠标左键按下后将x1,y1赋值
-    Private Sub Panel1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+    Private Sub Panel1_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel1.MouseDown
+
         If e.Button = Windows.Forms.MouseButtons.Left Then
             x1 = e.X
             y1 = e.Y
@@ -144,7 +156,8 @@ Public Class Form2
 
 
     '拖动过程中不断对x2,y2赋值
-    Private Sub Panel1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
+
         If e.Button = Windows.Forms.MouseButtons.Left Then
             x2 = e.X
             y2 = e.Y
@@ -155,6 +168,31 @@ Public Class Form2
 
     Private Sub NotifyIcon1_BalloonTipShown(sender As Object, e As EventArgs) Handles NotifyIcon1.BalloonTipShown
 
+    End Sub
+
+    Private Sub imgLogo_Click(sender As Object, e As EventArgs) Handles imgLogo.Click, PictureBox2.Click
+        If currentChildForm IsNot Nothing Then
+            currentChildForm.Close()
+        End If
+        Reset()
+
+    End Sub
+    Private Sub Reset()
+
+        DisableButton()
+        leftBorderBtn.Visible = False
+        IconCurrentForm.IconChar = IconChar.Home
+        IconCurrentForm.IconColor = Color.MediumPurple
+        lblFormTitle.Text = "主页"
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Application.Exit()
     End Sub
 
     Private Sub NotifyIcon1_Click(sender As Object, e As EventArgs) Handles NotifyIcon1.Click
@@ -170,6 +208,28 @@ Public Class Form2
     Private Sub Form2_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 
 
+    End Sub
+
+    Dim mouseClickCount As Integer
+    Private Sub imgLogo_MouseClick(sender As Object, e As MouseEventArgs) Handles imgLogo.MouseClick
+        ' Debug.Print(mouseClickCount)
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            mouseClickCount = mouseClickCount + 1
+            If mouseClickCount > 4 Then
+                '开车
+                PictureBox_kaiche1.Visible = True
+                PictureBox_kaiche2.Visible = True
+                PictureBox_kaiche3.Visible = True
+                PictureBox_kaiche4.Visible = True
+                PictureBox_kaiche5.Visible = True
+                PictureBox2.Visible = False
+            End If
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        mouseClickCount = 0
+        'Debug.Print("Timer1_Tick: " + CStr(mouseClickCount))
     End Sub
 End Class
 
