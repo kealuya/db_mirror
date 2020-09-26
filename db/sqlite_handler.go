@@ -3,6 +3,8 @@ package db
 import (
 	"bytes"
 	"database/sql"
+	"db_mirror/common"
+	"db_mirror/entity"
 	"fmt"
 	"github.com/astaxie/beego/logs"
 	"github.com/go-xorm/xorm"
@@ -10,8 +12,6 @@ import (
 	"log"
 	"reflect"
 	"sync"
-	"db_mirror/common"
-	"db_mirror/entity"
 )
 
 type SqliteBakDb struct {
@@ -223,9 +223,7 @@ func (sb *SqliteBakDb) Sqlite_GetDbTableSetting(backup_id int) (bakTblSetting []
 	sql.WriteString("where backup_id = ? ")
 
 	err := sb.Engine.SQL(sql.String(), backup_id).Find(&bakTblSetting)
-	if err != nil {
-		common.ErrorHandler(err)
-	}
+	common.ErrorHandler(err)
 
 	return
 }
