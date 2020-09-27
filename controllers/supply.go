@@ -1,11 +1,11 @@
 package controllers
 
 import (
+	"db_mirror/db"
+	"db_mirror/entity"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
-	"db_mirror/db"
-	"db_mirror/entity"
 )
 
 type SupplyController struct {
@@ -32,10 +32,29 @@ func (supplyCtrl *SupplyController) GetTableInfo() {
 
 	bakTblSetting, err := db.Sqlite_NewDb().Sqlite_GetDbTableSetting(backup_tbl.BackupId)
 	if err != nil {
-		returnJson = returnValueMarshal(false, fmt.Sprint(fmt.Sprint(err), err), nil)
+		returnJson = returnValueMarshal(false, fmt.Sprint(err), nil)
 		return
 	}
 
 	// 成功的场合
 	returnJson = returnValueMarshal(true, "获取表信息成功", bakTblSetting)
+}
+
+func (supplyCtrl *SupplyController) GetAllDbSettingInfo() {
+	//初始化
+	var returnJson []byte
+	defer func() {
+		//返回值处理
+		supplyCtrl.Data["json"] = string(returnJson)
+		supplyCtrl.ServeJSON()
+	}()
+
+	dbSetting, err := db.Sqlite_NewDb().Sqlite_GetAllDbTableSetting()
+	if err != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint(err), nil)
+		return
+	}
+
+	// 成功的场合
+	returnJson = returnValueMarshal(true, "获取所有DB配置信息成功", dbSetting)
 }

@@ -34,6 +34,8 @@ func init() {
 			beego.NSNamespace("/supply",
 				/*获取表信息，用于展示并让用户选择表备份策略*/
 				beego.NSRouter("/supply_tbl_info", &SupplyController{}, "post:GetTableInfo"),
+				/*获取表信息，用于展示并让用户选择表备份策略*/
+				beego.NSRouter("/supply_all_db_info", &SupplyController{}, "post:GetAllDbSettingInfo"),
 			),
 		)
 	//注册 namespace

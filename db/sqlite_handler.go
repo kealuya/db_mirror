@@ -228,6 +228,19 @@ func (sb *SqliteBakDb) Sqlite_GetDbTableSetting(backup_id int) (bakTblSetting []
 	return
 }
 
+func (sb *SqliteBakDb) Sqlite_GetAllDbTableSetting() (dbSetting []*entity.Setting, reErr error) {
+	// 对外错误处理
+	defer common.RecoverHandler(func(err interface{}) {
+		reErr = fmt.Errorf(" :%s", err)
+	})
+	sql := bytes.Buffer{}
+	sql.WriteString("select db_id,name,ip,port,service_name,username from login_db ")
+
+	err := sb.Engine.SQL(sql.String()).Find(&dbSetting)
+	common.ErrorHandler(err)
+	return
+}
+
 func (sb *SqliteBakDb) Sqlite_GetDbbackupSetting(backup_id int) (setting *entity.Backup_DB, reErr error) {
 	// 对外错误处理
 	defer common.RecoverHandler(func(err interface{}) {
