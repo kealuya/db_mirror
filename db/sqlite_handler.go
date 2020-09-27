@@ -316,3 +316,28 @@ func (sb *SqliteBakDb) Sqlite_UpdateSmartLogTime(backup_id int) {
 	}
 	common.ErrorHandler(errStmt)
 }
+
+func (sb *SqliteBakDb) Sqlite_DelDbSetting(setting entity.Setting) (reErr error) {
+	// 对外错误处理
+	defer common.RecoverHandler(func(err interface{}) {
+		reErr = fmt.Errorf("DB配置保存失败:%s", err)
+	})
+
+	sql := bytes.Buffer{}
+	sql.WriteString("delete from login_db where db_id = ?")
+
+	stmt, err := sb.Db.Prepare(sql.String())
+	common.ErrorHandler(err)
+	defer stmt.Close()
+
+	re, err := stmt.Exec(
+		setting.DbId,
+	)
+	common.ErrorHandler(err)
+	if ra, r_err := re.RowsAffected(); ra == 1 {
+		return nil
+	} else {
+		// 业务err
+		return fmt.Errorf("DB配置删除失败:%s", r_err)
+	}
+}

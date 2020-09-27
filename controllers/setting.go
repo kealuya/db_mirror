@@ -122,3 +122,37 @@ func (backupCtrl *SettingController) SaveBackupSetting() {
 	}
 	return
 }
+
+
+
+/*
+	删除db配置
+*/
+func (settingCtrl *SettingController) DelDbSetting() {
+
+	//初始化
+	var returnJson []byte
+	defer func() {
+		//返回值处理
+		settingCtrl.Data["json"] = string(returnJson)
+		settingCtrl.ServeJSON()
+	}()
+	var setting = new(Setting)
+	var setting_json_byte = settingCtrl.Ctx.Input.RequestBody
+
+	//传入json转化对象
+	err := json.Unmarshal(setting_json_byte, &setting)
+	if err != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint("传入参数json转换失败:", err), nil)
+		return
+	}
+
+	//业务处理
+
+	if save_err := db.Sqlite_NewDb().Sqlite_DelDbSetting(*setting); save_err == nil {
+		returnJson = returnValueMarshal(true, "DB配置信息删除成功", nil)
+	} else {
+		returnJson = returnValueMarshal(false, fmt.Sprint(save_err), nil)
+	}
+	return
+}
