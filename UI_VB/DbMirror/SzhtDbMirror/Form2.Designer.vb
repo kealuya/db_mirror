@@ -36,14 +36,9 @@ Partial Class Form2
         Me.lblFormTitle = New System.Windows.Forms.Label()
         Me.IconCurrentForm = New FontAwesome.Sharp.IconPictureBox()
         Me.PanelDesktop = New System.Windows.Forms.Panel()
-        Me.PictureBox_kaiche2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_kaiche1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox_kaiche3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_kaiche5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox_kaiche4 = New System.Windows.Forms.PictureBox()
         Me.PanelMenu.SuspendLayout()
         Me.PanelLogo.SuspendLayout()
         CType(Me.imgLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,12 +46,7 @@ Partial Class Form2
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelDesktop.SuspendLayout()
-        CType(Me.PictureBox_kaiche2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_kaiche1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_kaiche3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_kaiche5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox_kaiche4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelMenu
@@ -235,41 +225,12 @@ Partial Class Form2
         'PanelDesktop
         '
         Me.PanelDesktop.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.PanelDesktop.Controls.Add(Me.PictureBox_kaiche4)
-        Me.PanelDesktop.Controls.Add(Me.PictureBox_kaiche2)
-        Me.PanelDesktop.Controls.Add(Me.PictureBox_kaiche5)
-        Me.PanelDesktop.Controls.Add(Me.PictureBox_kaiche3)
-        Me.PanelDesktop.Controls.Add(Me.PictureBox_kaiche1)
         Me.PanelDesktop.Controls.Add(Me.PictureBox2)
         Me.PanelDesktop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelDesktop.Location = New System.Drawing.Point(200, 70)
         Me.PanelDesktop.Name = "PanelDesktop"
         Me.PanelDesktop.Size = New System.Drawing.Size(740, 453)
         Me.PanelDesktop.TabIndex = 2
-        '
-        'PictureBox_kaiche2
-        '
-        Me.PictureBox_kaiche2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox_kaiche2.Image = CType(resources.GetObject("PictureBox_kaiche2.Image"), System.Drawing.Image)
-        Me.PictureBox_kaiche2.Location = New System.Drawing.Point(121, 114)
-        Me.PictureBox_kaiche2.Name = "PictureBox_kaiche2"
-        Me.PictureBox_kaiche2.Size = New System.Drawing.Size(200, 327)
-        Me.PictureBox_kaiche2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_kaiche2.TabIndex = 1
-        Me.PictureBox_kaiche2.TabStop = False
-        Me.PictureBox_kaiche2.Visible = False
-        '
-        'PictureBox_kaiche1
-        '
-        Me.PictureBox_kaiche1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox_kaiche1.Image = CType(resources.GetObject("PictureBox_kaiche1.Image"), System.Drawing.Image)
-        Me.PictureBox_kaiche1.Location = New System.Drawing.Point(6, 6)
-        Me.PictureBox_kaiche1.Name = "PictureBox_kaiche1"
-        Me.PictureBox_kaiche1.Size = New System.Drawing.Size(200, 327)
-        Me.PictureBox_kaiche1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_kaiche1.TabIndex = 1
-        Me.PictureBox_kaiche1.TabStop = False
-        Me.PictureBox_kaiche1.Visible = False
         '
         'PictureBox2
         '
@@ -295,42 +256,6 @@ Partial Class Form2
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 2000
         '
-        'PictureBox_kaiche3
-        '
-        Me.PictureBox_kaiche3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox_kaiche3.Image = CType(resources.GetObject("PictureBox_kaiche3.Image"), System.Drawing.Image)
-        Me.PictureBox_kaiche3.Location = New System.Drawing.Point(269, 6)
-        Me.PictureBox_kaiche3.Name = "PictureBox_kaiche3"
-        Me.PictureBox_kaiche3.Size = New System.Drawing.Size(200, 327)
-        Me.PictureBox_kaiche3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_kaiche3.TabIndex = 1
-        Me.PictureBox_kaiche3.TabStop = False
-        Me.PictureBox_kaiche3.Visible = False
-        '
-        'PictureBox_kaiche5
-        '
-        Me.PictureBox_kaiche5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox_kaiche5.Image = CType(resources.GetObject("PictureBox_kaiche5.Image"), System.Drawing.Image)
-        Me.PictureBox_kaiche5.Location = New System.Drawing.Point(528, 6)
-        Me.PictureBox_kaiche5.Name = "PictureBox_kaiche5"
-        Me.PictureBox_kaiche5.Size = New System.Drawing.Size(200, 327)
-        Me.PictureBox_kaiche5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_kaiche5.TabIndex = 1
-        Me.PictureBox_kaiche5.TabStop = False
-        Me.PictureBox_kaiche5.Visible = False
-        '
-        'PictureBox_kaiche4
-        '
-        Me.PictureBox_kaiche4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox_kaiche4.Image = CType(resources.GetObject("PictureBox_kaiche4.Image"), System.Drawing.Image)
-        Me.PictureBox_kaiche4.Location = New System.Drawing.Point(397, 114)
-        Me.PictureBox_kaiche4.Name = "PictureBox_kaiche4"
-        Me.PictureBox_kaiche4.Size = New System.Drawing.Size(200, 327)
-        Me.PictureBox_kaiche4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox_kaiche4.TabIndex = 1
-        Me.PictureBox_kaiche4.TabStop = False
-        Me.PictureBox_kaiche4.Visible = False
-        '
         'Form2
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -355,12 +280,7 @@ Partial Class Form2
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconCurrentForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelDesktop.ResumeLayout(False)
-        CType(Me.PictureBox_kaiche2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_kaiche1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_kaiche3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_kaiche5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox_kaiche4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -379,10 +299,5 @@ Partial Class Form2
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox_kaiche2 As PictureBox
-    Friend WithEvents PictureBox_kaiche1 As PictureBox
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents PictureBox_kaiche4 As PictureBox
-    Friend WithEvents PictureBox_kaiche5 As PictureBox
-    Friend WithEvents PictureBox_kaiche3 As PictureBox
 End Class

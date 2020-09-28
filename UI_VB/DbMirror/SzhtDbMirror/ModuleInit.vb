@@ -1,6 +1,9 @@
 ﻿Imports Newtonsoft.Json.Linq
+
+
 Module ModuleInit
 
+    Public Const BASE_URL As String = "http://localhost:8000/"
 
     Public Function RunSzhtDbBak() As Boolean
 

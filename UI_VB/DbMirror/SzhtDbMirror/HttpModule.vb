@@ -47,7 +47,7 @@ Module HttpModule
         Dim r As String = Replace(returnString, "\", "")
         r = Replace(r, """{", "{")
         r = Replace(r, "}""", "}")
-        Debug.Print(r)
+        'Debug.Print(r)
 
         Return r
     End Function

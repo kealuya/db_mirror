@@ -18,3 +18,8 @@ D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirr
 D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.FormStrategy.resources
 D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\Newtonsoft.Json.dll
 D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\Newtonsoft.Json.xml
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\Guna.UI2.dll
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\SzhtDbMirror.exe.manifest
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\SzhtDbMirror.application
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.exe.manifest
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.application

@@ -13,11 +13,11 @@ Public Class Form2
         ' 此调用是设计器所必需的。
         InitializeComponent()
         '开车
-        PictureBox_kaiche1.Visible = False
-        PictureBox_kaiche2.Visible = False
-        PictureBox_kaiche3.Visible = False
-        PictureBox_kaiche4.Visible = False
-        PictureBox_kaiche5.Visible = False
+        'PictureBox_kaiche1.Visible = False
+        'PictureBox_kaiche2.Visible = False
+        'PictureBox_kaiche3.Visible = False
+        'PictureBox_kaiche4.Visible = False
+        'PictureBox_kaiche5.Visible = False
         PictureBox2.Visible = True
 
         ' 在 InitializeComponent() 调用之后添加任何初始化。
@@ -28,7 +28,7 @@ Public Class Form2
 
 
     End Sub
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem_quit As System.Windows.Forms.ToolStripMenuItem
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         '启动go程序，并检测是否可以沟通
@@ -36,14 +36,15 @@ Public Class Form2
             MsgBox("系统无法启动，发生故障")
         End If
 
+        '托盘程序初始化
+        ToolStripMenuItem_quit = New ToolStripMenuItem("退出")
 
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem("88")
         Me.NotifyIcon1.ContextMenuStrip = New ContextMenuStrip
         ' Me.NotifyIcon1.ContextMenu.MenuItems = New Menu.MenuItemCollection
-        Me.NotifyIcon1.ContextMenuStrip.Items.Add(Me.ToolStripMenuItem1)
+        Me.NotifyIcon1.ContextMenuStrip.Items.Add(ToolStripMenuItem_quit)
 
 
-        'Me.NotifyIcon1.ShowBalloonTip(2000, "tt", "xx", ToolTipIcon.Info)
+        '；Me.NotifyIcon1.ShowBalloonTip(2000, "tt", "xx", ToolTipIcon.Info)
         '设定程序不应该显示在任务栏
         Me.ShowInTaskbar = False
         '设定程序运行后最小化
@@ -136,14 +137,21 @@ Public Class Form2
         OpenChildForm(New FormState)
     End Sub
 
-    Dim x1, x2, y1, y2 As Integer
 
-    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
 
+
+
+    Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
+        If Me.WindowState = FormWindowState.Minimized Then
+            Me.WindowState = FormWindowState.Normal
+        End If
+
+        Me.BringToFront()
     End Sub
 
 
 
+    Dim x1, x2, y1, y2 As Integer
 
     '鼠标左键按下后将x1,y1赋值
     Private Sub Panel1_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel1.MouseDown
@@ -167,7 +175,7 @@ Public Class Form2
     End Sub
 
     Private Sub NotifyIcon1_BalloonTipShown(sender As Object, e As EventArgs) Handles NotifyIcon1.BalloonTipShown
-
+        Console.WriteLine(sender)
     End Sub
 
     Private Sub imgLogo_Click(sender As Object, e As EventArgs) Handles imgLogo.Click, PictureBox2.Click
@@ -192,13 +200,10 @@ Public Class Form2
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Application.Exit()
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub NotifyIcon1_Click(sender As Object, e As EventArgs) Handles NotifyIcon1.Click
-        Debug.Print("sdfsd")
 
-    End Sub
 
 
     Private Sub Form2_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
@@ -217,11 +222,11 @@ Public Class Form2
             mouseClickCount = mouseClickCount + 1
             If mouseClickCount > 4 Then
                 '开车
-                PictureBox_kaiche1.Visible = True
-                PictureBox_kaiche2.Visible = True
-                PictureBox_kaiche3.Visible = True
-                PictureBox_kaiche4.Visible = True
-                PictureBox_kaiche5.Visible = True
+                'PictureBox_kaiche1.Visible = True
+                'PictureBox_kaiche2.Visible = True
+                'PictureBox_kaiche3.Visible = True
+                'PictureBox_kaiche4.Visible = True
+                'PictureBox_kaiche5.Visible = True
                 PictureBox2.Visible = False
             End If
         End If
@@ -230,6 +235,10 @@ Public Class Form2
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         mouseClickCount = 0
         'Debug.Print("Timer1_Tick: " + CStr(mouseClickCount))
+    End Sub
+
+    Private Sub ToolStripMenuItem_quit_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem_quit.Click
+        Application.Exit()
     End Sub
 End Class
 
