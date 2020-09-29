@@ -58,3 +58,22 @@ func (supplyCtrl *SupplyController) GetAllDbSettingInfo() {
 	// 成功的场合
 	returnJson = returnValueMarshal(true, "获取所有DB配置信息成功", dbSetting)
 }
+
+func (supplyCtrl *SupplyController) GetAllDbbackupSettingInfo() {
+	//初始化
+	var returnJson []byte
+	defer func() {
+		//返回值处理
+		supplyCtrl.Data["json"] = string(returnJson)
+		supplyCtrl.ServeJSON()
+	}()
+
+	dbbackupSetting, err := db.Sqlite_NewDb().Sqlite_GetAllDbbackupSetting()
+	if err != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint(err), nil)
+		return
+	}
+
+	// 成功的场合
+	returnJson = returnValueMarshal(true, "获取所有DB备份配置信息成功", dbbackupSetting)
+}

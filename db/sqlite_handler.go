@@ -266,6 +266,19 @@ func (sb *SqliteBakDb) Sqlite_GetDbbackupSetting(backup_id int) (setting *entity
 	}
 }
 
+func (sb *SqliteBakDb) Sqlite_GetAllDbbackupSetting() (backupDbs []*entity.Backup_DB, reErr error) {
+	// 对外错误处理
+	defer common.RecoverHandler(func(err interface{}) {
+		reErr = fmt.Errorf("获取DB备份策略信息失败:%s", err)
+	})
+	sql := bytes.Buffer{}
+	sql.WriteString("select backup_id,db_id_from,db_id_to,desc,strategy_schedule,strategy_is_check_operate,datetime(smart_log_time) from backup_db ")
+
+	err := sb.Engine.SQL(sql.String()).Find(&backupDbs)
+	common.ErrorHandler(err)
+	return
+}
+
 func (sb *SqliteBakDb) Sqlite_SaveRunLog(backup_id int, runLog string) {
 	// 对外错误处理
 	defer common.RecoverHandler(func(err interface{}) {
