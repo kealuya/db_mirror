@@ -36,7 +36,7 @@ func main() {
 	//
 	//fmt.Println("affect=", a, nce.ID)
 
-	r, err := en.SQL("SELECT EMPLOYEE_INFO_AUTOINC.NEXTVAL FROM dual ").QueryString()
+	r, err := en.SQL("SELECT NEXTVAL FROM dual ").QueryString()
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println(err.Error())
