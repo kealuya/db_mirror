@@ -3,7 +3,7 @@
 
 Module ModuleInit
 
-    Public Const BASE_URL As String = "http://localhost:8000/"
+    Public Const BASE_URL As String = "http://localhost:8080/"
 
     Public Function RunSzhtDbBak() As Boolean
 

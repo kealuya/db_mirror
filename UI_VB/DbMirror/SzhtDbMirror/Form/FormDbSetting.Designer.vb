@@ -22,9 +22,9 @@ Partial Class FormDbSetting
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Button_test = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2TextBox_dbname = New Guna.UI2.WinForms.Guna2TextBox()
@@ -59,10 +59,10 @@ Partial Class FormDbSetting
         Me.Guna2Button_test.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button_test.ForeColor = System.Drawing.Color.White
         Me.Guna2Button_test.HoverState.Parent = Me.Guna2Button_test
-        Me.Guna2Button_test.Location = New System.Drawing.Point(423, 405)
+        Me.Guna2Button_test.Location = New System.Drawing.Point(423, 399)
         Me.Guna2Button_test.Name = "Guna2Button_test"
         Me.Guna2Button_test.ShadowDecoration.Parent = Me.Guna2Button_test
-        Me.Guna2Button_test.Size = New System.Drawing.Size(123, 26)
+        Me.Guna2Button_test.Size = New System.Drawing.Size(123, 36)
         Me.Guna2Button_test.TabIndex = 0
         Me.Guna2Button_test.Text = "测试"
         '
@@ -71,7 +71,7 @@ Partial Class FormDbSetting
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(27, 218)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(27, 231)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(102, 21)
         Me.Guna2HtmlLabel1.TabIndex = 1
@@ -94,13 +94,13 @@ Partial Class FormDbSetting
         Me.Guna2TextBox_dbname.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox_dbname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox_dbname.HoverState.Parent = Me.Guna2TextBox_dbname
-        Me.Guna2TextBox_dbname.Location = New System.Drawing.Point(148, 218)
+        Me.Guna2TextBox_dbname.Location = New System.Drawing.Point(148, 223)
         Me.Guna2TextBox_dbname.Name = "Guna2TextBox_dbname"
         Me.Guna2TextBox_dbname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox_dbname.PlaceholderText = ""
         Me.Guna2TextBox_dbname.SelectedText = ""
         Me.Guna2TextBox_dbname.ShadowDecoration.Parent = Me.Guna2TextBox_dbname
-        Me.Guna2TextBox_dbname.Size = New System.Drawing.Size(200, 20)
+        Me.Guna2TextBox_dbname.Size = New System.Drawing.Size(200, 36)
         Me.Guna2TextBox_dbname.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.Guna2TextBox_dbname.TabIndex = 2
         '
@@ -109,7 +109,7 @@ Partial Class FormDbSetting
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(27, 254)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(27, 285)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(30, 21)
         Me.Guna2HtmlLabel2.TabIndex = 1
@@ -132,13 +132,13 @@ Partial Class FormDbSetting
         Me.Guna2TextBox_ip.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox_ip.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox_ip.HoverState.Parent = Me.Guna2TextBox_ip
-        Me.Guna2TextBox_ip.Location = New System.Drawing.Point(148, 254)
+        Me.Guna2TextBox_ip.Location = New System.Drawing.Point(148, 277)
         Me.Guna2TextBox_ip.Name = "Guna2TextBox_ip"
         Me.Guna2TextBox_ip.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox_ip.PlaceholderText = ""
         Me.Guna2TextBox_ip.SelectedText = ""
         Me.Guna2TextBox_ip.ShadowDecoration.Parent = Me.Guna2TextBox_ip
-        Me.Guna2TextBox_ip.Size = New System.Drawing.Size(200, 20)
+        Me.Guna2TextBox_ip.Size = New System.Drawing.Size(200, 36)
         Me.Guna2TextBox_ip.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.Guna2TextBox_ip.TabIndex = 2
         '
@@ -147,7 +147,7 @@ Partial Class FormDbSetting
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(27, 290)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(27, 340)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(48, 21)
         Me.Guna2HtmlLabel3.TabIndex = 1
@@ -170,13 +170,13 @@ Partial Class FormDbSetting
         Me.Guna2TextBox_port.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox_port.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox_port.HoverState.Parent = Me.Guna2TextBox_port
-        Me.Guna2TextBox_port.Location = New System.Drawing.Point(148, 291)
+        Me.Guna2TextBox_port.Location = New System.Drawing.Point(148, 332)
         Me.Guna2TextBox_port.Name = "Guna2TextBox_port"
         Me.Guna2TextBox_port.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox_port.PlaceholderText = ""
         Me.Guna2TextBox_port.SelectedText = ""
         Me.Guna2TextBox_port.ShadowDecoration.Parent = Me.Guna2TextBox_port
-        Me.Guna2TextBox_port.Size = New System.Drawing.Size(51, 20)
+        Me.Guna2TextBox_port.Size = New System.Drawing.Size(51, 36)
         Me.Guna2TextBox_port.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.Guna2TextBox_port.TabIndex = 2
         '
@@ -185,7 +185,7 @@ Partial Class FormDbSetting
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(27, 327)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(399, 340)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(84, 21)
         Me.Guna2HtmlLabel4.TabIndex = 1
@@ -208,13 +208,13 @@ Partial Class FormDbSetting
         Me.Guna2TextBox_servicename.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox_servicename.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox_servicename.HoverState.Parent = Me.Guna2TextBox_servicename
-        Me.Guna2TextBox_servicename.Location = New System.Drawing.Point(148, 327)
+        Me.Guna2TextBox_servicename.Location = New System.Drawing.Point(520, 332)
         Me.Guna2TextBox_servicename.Name = "Guna2TextBox_servicename"
         Me.Guna2TextBox_servicename.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox_servicename.PlaceholderText = ""
         Me.Guna2TextBox_servicename.SelectedText = ""
         Me.Guna2TextBox_servicename.ShadowDecoration.Parent = Me.Guna2TextBox_servicename
-        Me.Guna2TextBox_servicename.Size = New System.Drawing.Size(51, 20)
+        Me.Guna2TextBox_servicename.Size = New System.Drawing.Size(51, 36)
         Me.Guna2TextBox_servicename.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.Guna2TextBox_servicename.TabIndex = 2
         '
@@ -223,7 +223,7 @@ Partial Class FormDbSetting
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.Guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(398, 219)
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(398, 231)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(66, 21)
         Me.Guna2HtmlLabel5.TabIndex = 1
@@ -246,13 +246,13 @@ Partial Class FormDbSetting
         Me.Guna2TextBox_username.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox_username.HoverState.Parent = Me.Guna2TextBox_username
-        Me.Guna2TextBox_username.Location = New System.Drawing.Point(519, 219)
+        Me.Guna2TextBox_username.Location = New System.Drawing.Point(519, 223)
         Me.Guna2TextBox_username.Name = "Guna2TextBox_username"
         Me.Guna2TextBox_username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox_username.PlaceholderText = ""
         Me.Guna2TextBox_username.SelectedText = ""
         Me.Guna2TextBox_username.ShadowDecoration.Parent = Me.Guna2TextBox_username
-        Me.Guna2TextBox_username.Size = New System.Drawing.Size(200, 20)
+        Me.Guna2TextBox_username.Size = New System.Drawing.Size(200, 36)
         Me.Guna2TextBox_username.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.Guna2TextBox_username.TabIndex = 2
         '
@@ -261,7 +261,7 @@ Partial Class FormDbSetting
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(398, 258)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(398, 285)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(48, 21)
         Me.Guna2HtmlLabel6.TabIndex = 1
@@ -284,13 +284,13 @@ Partial Class FormDbSetting
         Me.Guna2TextBox_password.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox_password.HoverState.Parent = Me.Guna2TextBox_password
-        Me.Guna2TextBox_password.Location = New System.Drawing.Point(519, 259)
+        Me.Guna2TextBox_password.Location = New System.Drawing.Point(520, 277)
         Me.Guna2TextBox_password.Name = "Guna2TextBox_password"
         Me.Guna2TextBox_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Guna2TextBox_password.PlaceholderText = ""
         Me.Guna2TextBox_password.SelectedText = ""
         Me.Guna2TextBox_password.ShadowDecoration.Parent = Me.Guna2TextBox_password
-        Me.Guna2TextBox_password.Size = New System.Drawing.Size(200, 20)
+        Me.Guna2TextBox_password.Size = New System.Drawing.Size(200, 36)
         Me.Guna2TextBox_password.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.Guna2TextBox_password.TabIndex = 2
         '
@@ -304,10 +304,10 @@ Partial Class FormDbSetting
         Me.Guna2Button_save.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button_save.ForeColor = System.Drawing.Color.White
         Me.Guna2Button_save.HoverState.Parent = Me.Guna2Button_save
-        Me.Guna2Button_save.Location = New System.Drawing.Point(584, 406)
+        Me.Guna2Button_save.Location = New System.Drawing.Point(584, 400)
         Me.Guna2Button_save.Name = "Guna2Button_save"
         Me.Guna2Button_save.ShadowDecoration.Parent = Me.Guna2Button_save
-        Me.Guna2Button_save.Size = New System.Drawing.Size(123, 26)
+        Me.Guna2Button_save.Size = New System.Drawing.Size(123, 36)
         Me.Guna2Button_save.TabIndex = 0
         Me.Guna2Button_save.Text = "保存"
         '
@@ -317,30 +317,30 @@ Partial Class FormDbSetting
         Me.Guna2DataGridView1.AllowUserToDeleteRows = False
         Me.Guna2DataGridView1.AllowUserToResizeColumns = False
         Me.Guna2DataGridView1.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.Guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Guna2DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.Guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(176, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(176, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.Guna2DataGridView1.ColumnHeadersHeight = 21
         Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column_dbname, Me.Column_ip, Me.Column_port, Me.Column_servicename, Me.Column_username, Me.db_id})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(239, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(202, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(239, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(202, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle6
         Me.Guna2DataGridView1.EnableHeadersVisualStyles = False
         Me.Guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Guna2DataGridView1.Location = New System.Drawing.Point(12, 12)
