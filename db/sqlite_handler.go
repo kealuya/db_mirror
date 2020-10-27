@@ -354,3 +354,29 @@ func (sb *SqliteBakDb) Sqlite_DelDbSetting(setting entity.Setting) (reErr error)
 		return fmt.Errorf("DB配置删除失败:%s", r_err)
 	}
 }
+
+
+func (sb *SqliteBakDb) Sqlite_DelDbBackup(backupDb entity.Backup_DB) (reErr error) {
+	// 对外错误处理
+	defer common.RecoverHandler(func(err interface{}) {
+		reErr = fmt.Errorf("DB备份策略配置保存失败:%s", err)
+	})
+
+	sql := bytes.Buffer{}
+	sql.WriteString("delete from backup_db where backup_id = ?")
+
+	stmt, err := sb.Db.Prepare(sql.String())
+	common.ErrorHandler(err)
+	defer stmt.Close()
+
+	re, err := stmt.Exec(
+		backupDb.BackupId,
+	)
+	common.ErrorHandler(err)
+	if ra, r_err := re.RowsAffected(); ra == 1 {
+		return nil
+	} else {
+		// 业务err
+		return fmt.Errorf("DB备份策略删除失败:%s", r_err)
+	}
+}

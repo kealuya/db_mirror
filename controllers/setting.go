@@ -97,6 +97,7 @@ func (settingCtrl *SettingController) SaveDbSetting() {
 }
 
 func (backupCtrl *SettingController) SaveBackupSetting() {
+
 	//初始化
 	var returnJson []byte
 	defer func() {
@@ -148,9 +149,39 @@ func (settingCtrl *SettingController) DelDbSetting() {
 	}
 
 	//业务处理
-
 	if save_err := db.Sqlite_NewDb().Sqlite_DelDbSetting(*setting); save_err == nil {
 		returnJson = returnValueMarshal(true, "DB配置信息删除成功", nil)
+	} else {
+		returnJson = returnValueMarshal(false, fmt.Sprint(save_err), nil)
+	}
+	return
+}
+
+/*
+	删除db备份策略配置
+*/
+func (settingCtrl *SettingController) DelDbBackup() {
+
+	//初始化
+	var returnJson []byte
+	defer func() {
+		//返回值处理
+		settingCtrl.Data["json"] = string(returnJson)
+		settingCtrl.ServeJSON()
+	}()
+	var backupDB = new(Backup_DB)
+	var backupDB_json_byte = settingCtrl.Ctx.Input.RequestBody
+
+	//传入json转化对象
+	err := json.Unmarshal(backupDB_json_byte, &backupDB)
+	if err != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint("传入参数json转换失败:", err), nil)
+		return
+	}
+
+	//业务处理
+	if save_err := db.Sqlite_NewDb().Sqlite_DelDbBackup(*backupDB); save_err == nil {
+		returnJson = returnValueMarshal(true, "DB备份策略配置信息删除成功", nil)
 	} else {
 		returnJson = returnValueMarshal(false, fmt.Sprint(save_err), nil)
 	}

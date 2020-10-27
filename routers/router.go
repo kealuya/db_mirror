@@ -20,6 +20,8 @@ func init() {
 				beego.NSRouter("/save_db_setting", &SettingController{}, "post:SaveDbSetting"),
 				/*DB配置删除*/
 				beego.NSRouter("/del_db_setting", &SettingController{}, "post:DelDbSetting"),
+				/*DB备份策略配置删除*/
+				beego.NSRouter("/del_db_backup", &SettingController{}, "post:DelDbBackup"),
 				/*初次使用 保存db备份策略*/
 				beego.NSRouter("/save_backup_db_setting", &SettingController{}, "post:SaveBackupSetting"),
 			),
