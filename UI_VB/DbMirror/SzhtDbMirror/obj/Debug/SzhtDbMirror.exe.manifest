@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SzhtDbMirror.exe" size="21373968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SzhtDbMirror.exe" size="21392400">
       <assemblyIdentity name="SzhtDbMirror" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FtX2e1OdTwxYRNVbsPtE4z0Ncw5oQsb4lREeXV8MkAI=</dsig:DigestValue>
+        <dsig:DigestValue>KiwvK7YTkX9CjWtnSXHDXnYQRYRt/sW9UceM5VAXCK8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

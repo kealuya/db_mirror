@@ -131,6 +131,24 @@
     <Compile Include="Form\FormDbSetting.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\FormMsgShow.Designer.vb">
+      <DependentUpon>FormMsgShow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMsgShow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormProgressIndicator.Designer.vb">
+      <DependentUpon>FormProgressIndicator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormProgressIndicator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormShade.Designer.vb">
+      <DependentUpon>FormShade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormShade.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\FormState.Designer.vb">
       <DependentUpon>FormState.vb</DependentUpon>
     </Compile>
@@ -141,6 +159,18 @@
       <DependentUpon>FormStrategy.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\FormStrategy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormStrategyNewDialog.Designer.vb">
+      <DependentUpon>FormStrategyNewDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormStrategyNewDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormTableStrategyDetail.Designer.vb">
+      <DependentUpon>FormTableStrategyDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormTableStrategyDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HttpModule.vb" />
@@ -174,11 +204,26 @@
     <EmbeddedResource Include="Form\FormDbSetting.resx">
       <DependentUpon>FormDbSetting.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMsgShow.resx">
+      <DependentUpon>FormMsgShow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormProgressIndicator.resx">
+      <DependentUpon>FormProgressIndicator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormShade.resx">
+      <DependentUpon>FormShade.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormState.resx">
       <DependentUpon>FormState.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormStrategy.resx">
       <DependentUpon>FormStrategy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormStrategyNewDialog.resx">
+      <DependentUpon>FormStrategyNewDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormTableStrategyDetail.resx">
+      <DependentUpon>FormTableStrategyDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

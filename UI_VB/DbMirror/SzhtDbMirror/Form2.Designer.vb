@@ -269,7 +269,7 @@ Partial Class Form2
         Me.Name = "Form2"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form2"
+        Me.Text = "DB镜像工具"
         Me.PanelMenu.ResumeLayout(False)
         Me.PanelLogo.ResumeLayout(False)
         CType(Me.imgLogo, System.ComponentModel.ISupportInitialize).EndInit()

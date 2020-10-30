@@ -142,9 +142,10 @@ Public Class Form2
 
 
     Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
-        If Me.WindowState = FormWindowState.Minimized Then
-            Me.WindowState = FormWindowState.Normal
-        End If
+        'If Me.WindowState = FormWindowState.Minimized Then
+        '    Me.WindowState = FormWindowState.Normal
+        'End If
+        Me.Show()
 
         Me.BringToFront()
     End Sub
@@ -200,7 +201,8 @@ Public Class Form2
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.WindowState = FormWindowState.Minimized
+        'Me.WindowState = FormWindowState.Minimized
+        Me.Hide()
     End Sub
 
 

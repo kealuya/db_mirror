@@ -22,9 +22,9 @@ Partial Class FormStrategy
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column_strategy = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column_backup_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,11 +40,12 @@ Partial Class FormStrategy
         Me.Guna2ComboBox_strategy_schedule = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Button_save = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button_test = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button_table_copy = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button_new_strategy = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button_to_save = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2TextBox_backup_id = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2WinProgressIndicator1 = New Guna.UI2.WinForms.Guna2WinProgressIndicator()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,31 +53,31 @@ Partial Class FormStrategy
         '
         Me.Guna2DataGridView1.AllowUserToAddRows = False
         Me.Guna2DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.Guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Guna2DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.Guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(176, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(176, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.Guna2DataGridView1.ColumnHeadersHeight = 21
         Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column_strategy, Me.Column_backup_id, Me.Column_db_id_from, Me.Column_db_id_to, Me.Column_strategy_schedule})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(239, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(202, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(239, Byte), Integer))
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(202, Byte), Integer))
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle18
         Me.Guna2DataGridView1.EnableHeadersVisualStyles = False
         Me.Guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Guna2DataGridView1.Location = New System.Drawing.Point(12, 12)
@@ -281,39 +282,39 @@ Partial Class FormStrategy
         Me.Guna2HtmlLabel5.TabIndex = 5
         Me.Guna2HtmlLabel5.Text = "请准确确认数据备份走向"
         '
-        'Guna2Button_save
+        'Guna2Button_table_copy
         '
-        Me.Guna2Button_save.Animated = True
-        Me.Guna2Button_save.BorderRadius = 8
-        Me.Guna2Button_save.CheckedState.Parent = Me.Guna2Button_save
-        Me.Guna2Button_save.CustomImages.Parent = Me.Guna2Button_save
-        Me.Guna2Button_save.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Guna2Button_save.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button_save.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button_save.HoverState.Parent = Me.Guna2Button_save
-        Me.Guna2Button_save.Location = New System.Drawing.Point(445, 348)
-        Me.Guna2Button_save.Name = "Guna2Button_save"
-        Me.Guna2Button_save.ShadowDecoration.Parent = Me.Guna2Button_save
-        Me.Guna2Button_save.Size = New System.Drawing.Size(123, 36)
-        Me.Guna2Button_save.TabIndex = 6
-        Me.Guna2Button_save.Text = "表结构拷贝"
+        Me.Guna2Button_table_copy.Animated = True
+        Me.Guna2Button_table_copy.BorderRadius = 8
+        Me.Guna2Button_table_copy.CheckedState.Parent = Me.Guna2Button_table_copy
+        Me.Guna2Button_table_copy.CustomImages.Parent = Me.Guna2Button_table_copy
+        Me.Guna2Button_table_copy.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Guna2Button_table_copy.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button_table_copy.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button_table_copy.HoverState.Parent = Me.Guna2Button_table_copy
+        Me.Guna2Button_table_copy.Location = New System.Drawing.Point(445, 348)
+        Me.Guna2Button_table_copy.Name = "Guna2Button_table_copy"
+        Me.Guna2Button_table_copy.ShadowDecoration.Parent = Me.Guna2Button_table_copy
+        Me.Guna2Button_table_copy.Size = New System.Drawing.Size(123, 36)
+        Me.Guna2Button_table_copy.TabIndex = 6
+        Me.Guna2Button_table_copy.Text = "表结构拷贝"
         '
-        'Guna2Button_test
+        'Guna2Button_new_strategy
         '
-        Me.Guna2Button_test.Animated = True
-        Me.Guna2Button_test.BorderRadius = 8
-        Me.Guna2Button_test.CheckedState.Parent = Me.Guna2Button_test
-        Me.Guna2Button_test.CustomImages.Parent = Me.Guna2Button_test
-        Me.Guna2Button_test.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Guna2Button_test.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button_test.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button_test.HoverState.Parent = Me.Guna2Button_test
-        Me.Guna2Button_test.Location = New System.Drawing.Point(281, 348)
-        Me.Guna2Button_test.Name = "Guna2Button_test"
-        Me.Guna2Button_test.ShadowDecoration.Parent = Me.Guna2Button_test
-        Me.Guna2Button_test.Size = New System.Drawing.Size(123, 36)
-        Me.Guna2Button_test.TabIndex = 7
-        Me.Guna2Button_test.Text = "新建备份策略"
+        Me.Guna2Button_new_strategy.Animated = True
+        Me.Guna2Button_new_strategy.BorderRadius = 8
+        Me.Guna2Button_new_strategy.CheckedState.Parent = Me.Guna2Button_new_strategy
+        Me.Guna2Button_new_strategy.CustomImages.Parent = Me.Guna2Button_new_strategy
+        Me.Guna2Button_new_strategy.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Guna2Button_new_strategy.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button_new_strategy.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button_new_strategy.HoverState.Parent = Me.Guna2Button_new_strategy
+        Me.Guna2Button_new_strategy.Location = New System.Drawing.Point(281, 348)
+        Me.Guna2Button_new_strategy.Name = "Guna2Button_new_strategy"
+        Me.Guna2Button_new_strategy.ShadowDecoration.Parent = Me.Guna2Button_new_strategy
+        Me.Guna2Button_new_strategy.Size = New System.Drawing.Size(123, 36)
+        Me.Guna2Button_new_strategy.TabIndex = 7
+        Me.Guna2Button_new_strategy.Text = "新建备份策略"
         '
         'Guna2Button1
         '
@@ -332,22 +333,22 @@ Partial Class FormStrategy
         Me.Guna2Button1.TabIndex = 6
         Me.Guna2Button1.Text = "表策略详情"
         '
-        'Guna2Button2
+        'Guna2Button_to_save
         '
-        Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.BorderRadius = 8
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(609, 402)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Size = New System.Drawing.Size(123, 36)
-        Me.Guna2Button2.TabIndex = 6
-        Me.Guna2Button2.Text = "保存"
+        Me.Guna2Button_to_save.Animated = True
+        Me.Guna2Button_to_save.BorderRadius = 8
+        Me.Guna2Button_to_save.CheckedState.Parent = Me.Guna2Button_to_save
+        Me.Guna2Button_to_save.CustomImages.Parent = Me.Guna2Button_to_save
+        Me.Guna2Button_to_save.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Guna2Button_to_save.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button_to_save.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button_to_save.HoverState.Parent = Me.Guna2Button_to_save
+        Me.Guna2Button_to_save.Location = New System.Drawing.Point(609, 402)
+        Me.Guna2Button_to_save.Name = "Guna2Button_to_save"
+        Me.Guna2Button_to_save.ShadowDecoration.Parent = Me.Guna2Button_to_save
+        Me.Guna2Button_to_save.Size = New System.Drawing.Size(123, 36)
+        Me.Guna2Button_to_save.TabIndex = 6
+        Me.Guna2Button_to_save.Text = "保存"
         '
         'Guna2TextBox_backup_id
         '
@@ -369,9 +370,22 @@ Partial Class FormStrategy
         Me.Guna2TextBox_backup_id.PlaceholderText = ""
         Me.Guna2TextBox_backup_id.SelectedText = ""
         Me.Guna2TextBox_backup_id.ShadowDecoration.Parent = Me.Guna2TextBox_backup_id
-        Me.Guna2TextBox_backup_id.Size = New System.Drawing.Size(10, 36)
+        Me.Guna2TextBox_backup_id.Size = New System.Drawing.Size(189, 36)
         Me.Guna2TextBox_backup_id.TabIndex = 1
-        Me.Guna2TextBox_backup_id.Visible = False
+        '
+        'Guna2WinProgressIndicator1
+        '
+        Me.Guna2WinProgressIndicator1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2WinProgressIndicator1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2WinProgressIndicator1.CircleSize = 1.0!
+        Me.Guna2WinProgressIndicator1.Location = New System.Drawing.Point(323, 172)
+        Me.Guna2WinProgressIndicator1.Name = "Guna2WinProgressIndicator1"
+        Me.Guna2WinProgressIndicator1.ProgressColor = System.Drawing.Color.Purple
+        Me.Guna2WinProgressIndicator1.Size = New System.Drawing.Size(90, 90)
+        Me.Guna2WinProgressIndicator1.TabIndex = 8
+        Me.Guna2WinProgressIndicator1.Visible = False
         '
         'FormStrategy
         '
@@ -379,10 +393,11 @@ Partial Class FormStrategy
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(745, 450)
-        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.Guna2WinProgressIndicator1)
+        Me.Controls.Add(Me.Guna2Button_to_save)
         Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.Guna2Button_save)
-        Me.Controls.Add(Me.Guna2Button_test)
+        Me.Controls.Add(Me.Guna2Button_table_copy)
+        Me.Controls.Add(Me.Guna2Button_new_strategy)
         Me.Controls.Add(Me.Guna2HtmlLabel5)
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Guna2HtmlLabel4)
@@ -418,9 +433,10 @@ Partial Class FormStrategy
     Friend WithEvents Guna2ComboBox_strategy_schedule As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2Button_save As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button_test As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button_table_copy As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button_new_strategy As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button_to_save As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2TextBox_backup_id As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2WinProgressIndicator1 As Guna.UI2.WinForms.Guna2WinProgressIndicator
 End Class

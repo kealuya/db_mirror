@@ -119,7 +119,7 @@ Public Class FormDbSetting
         Dim resp As String = HttpModule.PostData(BASE_URL + "v1/setting/save_db_setting", js.ToString)
         Dim jo = JObject.Parse(resp)
         Dim s = jo.SelectToken("success")
-        If s = "true" Then
+        If s = "True" Then
             MsgBox(jo.SelectToken("msg"), Title:="提示")
         Else
             MsgBox(jo.SelectToken("msg"), Title:="提示")

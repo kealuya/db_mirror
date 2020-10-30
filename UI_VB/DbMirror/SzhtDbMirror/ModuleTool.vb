@@ -39,5 +39,19 @@
         p.Close()
         Return result
     End Function
+
+    Public Function NVL(ob As String) As String
+        If IsNothing(ob) Or ob = "" Then
+            Return ""
+        End If
+        Return CStr(ob)
+    End Function
+    Public Function DicNVL(dic As Dictionary(Of String, String), key As String) As String
+        If dic.ContainsKey(key) Then
+            Return dic.Item(key)
+        Else
+            Return ""
+        End If
+    End Function
 End Module
 

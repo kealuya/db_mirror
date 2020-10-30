@@ -219,7 +219,7 @@ func (sb *SqliteBakDb) Sqlite_GetDbTableSetting(backup_id int) (bakTblSetting []
 		reErr = fmt.Errorf(" :%s", err)
 	})
 	sql := bytes.Buffer{}
-	sql.WriteString("select backup_id,table_name,ddl,strategy,key from backup_db_table ")
+	sql.WriteString(`select backup_id,table_name,ddl,REPLACE ( REPLACE ( TRIM( strategy ), char ( 9 ), "" ), CHAR ( 10 ), "" ) as strategy ,key from backup_db_table `)
 	sql.WriteString("where backup_id = ? ")
 
 	err := sb.Engine.SQL(sql.String(), backup_id).Find(&bakTblSetting)
@@ -354,7 +354,6 @@ func (sb *SqliteBakDb) Sqlite_DelDbSetting(setting entity.Setting) (reErr error)
 		return fmt.Errorf("DB配置删除失败:%s", r_err)
 	}
 }
-
 
 func (sb *SqliteBakDb) Sqlite_DelDbBackup(backupDb entity.Backup_DB) (reErr error) {
 	// 对外错误处理

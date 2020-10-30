@@ -23,3 +23,8 @@ D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\SzhtDbMirr
 D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\bin\Debug\SzhtDbMirror.application
 D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.exe.manifest
 D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.application
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.FormStrategyNewDialog.resources
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.FormShade.resources
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.FormMsgShow.resources
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.FormProgressIndicator.resources
+D:\VisualStudioSorce\source\repos\SzhtDbMirror\SzhtDbMirror\obj\Debug\SzhtDbMirror.FormTableStrategyDetail.resources
