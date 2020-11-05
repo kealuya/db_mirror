@@ -39,7 +39,7 @@ Public Class FormTableStrategyDetail
             Dim smartCopy = strategy.SelectToken("smartCopy")
             Dim hasPkForIncrement = strategy.SelectToken("hasPkForIncrement")
             Dim cleanCopy = strategy.SelectToken("cleanCopy")
-            Me.Guna2DataGridView1.Rows.Add(New String() {table_name, CBool(isCopy), CBool(smartCopy), CBool(hasPkForIncrement), CBool(cleanCopy), key})
+            'Me.Guna2DataGridView1.Rows.Add(New String() {table_name, CBool(isCopy), CBool(smartCopy), CBool(hasPkForIncrement), CBool(cleanCopy), key})
 
         Next
 
