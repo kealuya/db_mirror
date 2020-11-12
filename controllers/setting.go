@@ -1,11 +1,11 @@
 package controllers
 
 import (
+	"db_mirror/db"
+	. "db_mirror/entity"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
-	"db_mirror/db"
-	. "db_mirror/entity"
 )
 
 type SettingController struct {
@@ -124,8 +124,6 @@ func (backupCtrl *SettingController) SaveBackupSetting() {
 	return
 }
 
-
-
 /*
 	删除db配置
 */
@@ -184,6 +182,34 @@ func (settingCtrl *SettingController) DelDbBackup() {
 		returnJson = returnValueMarshal(true, "DB备份策略配置信息删除成功", nil)
 	} else {
 		returnJson = returnValueMarshal(false, fmt.Sprint(save_err), nil)
+	}
+	return
+}
+
+func (backupCtrl *SettingController) UpdateBackupTableSetting() {
+
+	//初始化
+	var returnJson []byte
+	defer func() {
+		//返回值处理
+		backupCtrl.Data["json"] = string(returnJson)
+		backupCtrl.ServeJSON()
+	}()
+	var backup_tbl = new(BackupDbTableSetting)
+	var backup_tbl_json_byte = backupCtrl.Ctx.Input.RequestBody
+
+	//传入json转化对象
+	err := json.Unmarshal(backup_tbl_json_byte, &backup_tbl)
+	if err != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint("传入参数json转换失败:", err), nil)
+		return
+	}
+
+	// 成功的场合 - 保存tbl配置
+	if backup_err := db.Sqlite_NewDb().Sqlite_UpdateBackupTableSetting(*backup_tbl); backup_err == nil {
+		returnJson = returnValueMarshal(true, "更新备份表策略保存成功", nil)
+	} else {
+		returnJson = returnValueMarshal(false, fmt.Sprint(backup_err), nil)
 	}
 	return
 }

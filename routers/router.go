@@ -1,10 +1,10 @@
 package routers
 
 import (
+	. "db_mirror/controllers"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"github.com/astaxie/beego/logs"
-	. "db_mirror/controllers"
 )
 
 func init() {
@@ -24,6 +24,8 @@ func init() {
 				beego.NSRouter("/del_db_backup", &SettingController{}, "post:DelDbBackup"),
 				/*初次使用 保存db备份策略*/
 				beego.NSRouter("/save_backup_db_setting", &SettingController{}, "post:SaveBackupSetting"),
+				/*DB配置录入*/
+				beego.NSRouter("/update_backup_table_setting", &SettingController{}, "post:UpdateBackupTableSetting"),
 			),
 			beego.NSNamespace("/backup",
 				/*初次使用 db结构copy*/

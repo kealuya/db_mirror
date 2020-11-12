@@ -5,12 +5,14 @@ import (
 	"database/sql"
 	"db_mirror/common"
 	"db_mirror/entity"
+	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego/logs"
 	"github.com/go-xorm/xorm"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
 	"reflect"
+	"strconv"
 	"sync"
 )
 
@@ -378,4 +380,23 @@ func (sb *SqliteBakDb) Sqlite_DelDbBackup(backupDb entity.Backup_DB) (reErr erro
 		// 业务err
 		return fmt.Errorf("DB备份策略删除失败:%s", r_err)
 	}
+}
+
+func (sb *SqliteBakDb) Sqlite_UpdateBackupTableSetting(backupTableSetting entity.BackupDbTableSetting) (reErr error) {
+	// 对外错误处理
+	defer common.RecoverHandler(func(err interface{}) {
+		reErr = fmt.Errorf("更新备份表策略失败:%s", err)
+	})
+
+	backup_id := backupTableSetting.BackupID
+	engine := sb.Engine
+	for _, bt := range backupTableSetting.Data {
+		b, err := json.Marshal(bt.Strategy)
+		common.ErrorHandler(err, "更新备份表策略失败 -- "+strconv.Itoa(backup_id)+":"+bt.TableName)
+
+		_, err = engine.Exec("update backup_db_table set strategy = ? where backup_id = ? and table_name = ?",
+			string(b), backup_id, bt.TableName)
+		common.ErrorHandler(err, "更新备份表策略失败 -- "+strconv.Itoa(backup_id)+":"+bt.TableName)
+	}
+	return nil
 }

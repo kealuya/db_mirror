@@ -28,6 +28,19 @@ type Backup_Table struct {
 	Key       string `json:"key"`
 }
 
+type BackupDbTableSetting struct {
+	BackupID int `json:"backup_id"`
+	Data     []struct {
+		Strategy struct {
+			CleanCopy         bool `json:"cleanCopy"`
+			HasPkForIncrement bool `json:"hasPkForIncrement"`
+			IsCopy            bool `json:"isCopy"`
+			SmartCopy         bool `json:"smartCopy"`
+		} `json:"strategy"`
+		TableName string `json:"table_name"`
+	} `json:"data"`
+}
+
 type Run_Log struct {
 	BackupId   int    `json:"backup_id"`
 	Log        string `json:"log"`
