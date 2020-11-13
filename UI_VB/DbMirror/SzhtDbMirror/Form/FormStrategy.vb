@@ -212,6 +212,10 @@ Public Class FormStrategy
 
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        If "" = Guna2TextBox_backup_id.Text Then
+            MsgBox("请选择一条备份策略")
+            Exit Sub
+        End If
         Dim ftsd As FormTableStrategyDetail = New FormTableStrategyDetail()
         ftsd.ShowMe(Guna2TextBox_backup_id.Text)
     End Sub

@@ -26,16 +26,17 @@ Partial Class FormTableStrategyDetail
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Column_tableName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column_isCopy = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column_smartCopy = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column_hasPkForIncrement = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column_cleanCopy = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column_pk = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Button_close = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,56 +101,6 @@ Partial Class FormTableStrategyDetail
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(202, Byte), Integer))
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
         '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.Animated = True
-        Me.Guna2Button1.BorderRadius = 8
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Location = New System.Drawing.Point(594, 654)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(123, 36)
-        Me.Guna2Button1.TabIndex = 9
-        Me.Guna2Button1.Text = "确认"
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(12, 588)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(426, 21)
-        Me.Guna2HtmlLabel1.TabIndex = 10
-        Me.Guna2HtmlLabel1.Text = "备注2：from表数据量少于to表，不进行全表覆盖备份"
-        '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(12, 561)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(597, 21)
-        Me.Guna2HtmlLabel2.TabIndex = 10
-        Me.Guna2HtmlLabel2.Text = "备注1：智能判断备份根据数据库操作log分析，仅数据变动的表，进行备份"
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(12, 615)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(534, 21)
-        Me.Guna2HtmlLabel3.TabIndex = 10
-        Me.Guna2HtmlLabel3.Text = "备注3：主键PK备份只针对有主键的表，无主键默认为全表覆盖备份"
-        '
         'Column_tableName
         '
         Me.Column_tableName.FillWeight = 350.0!
@@ -192,6 +143,73 @@ Partial Class FormTableStrategyDetail
         Me.Column_pk.Name = "Column_pk"
         Me.Column_pk.ReadOnly = True
         '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.Animated = True
+        Me.Guna2Button1.BorderRadius = 8
+        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Location = New System.Drawing.Point(656, 654)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Size = New System.Drawing.Size(123, 36)
+        Me.Guna2Button1.TabIndex = 9
+        Me.Guna2Button1.Text = "确认"
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Consolas", 12.0!)
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(12, 588)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(426, 21)
+        Me.Guna2HtmlLabel1.TabIndex = 10
+        Me.Guna2HtmlLabel1.Text = "备注2：from表数据量少于to表，不进行全表覆盖备份"
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Consolas", 12.0!)
+        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(12, 561)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(597, 21)
+        Me.Guna2HtmlLabel2.TabIndex = 10
+        Me.Guna2HtmlLabel2.Text = "备注1：智能判断备份根据数据库操作log分析，仅数据变动的表，进行备份"
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Consolas", 12.0!)
+        Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(12, 615)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(534, 21)
+        Me.Guna2HtmlLabel3.TabIndex = 10
+        Me.Guna2HtmlLabel3.Text = "备注3：主键PK备份只针对有主键的表，无主键默认为全表覆盖备份"
+        '
+        'Guna2Button_close
+        '
+        Me.Guna2Button_close.Animated = True
+        Me.Guna2Button_close.BorderRadius = 8
+        Me.Guna2Button_close.CheckedState.Parent = Me.Guna2Button_close
+        Me.Guna2Button_close.CustomImages.Parent = Me.Guna2Button_close
+        Me.Guna2Button_close.FillColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Guna2Button_close.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button_close.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button_close.HoverState.Parent = Me.Guna2Button_close
+        Me.Guna2Button_close.Location = New System.Drawing.Point(805, 654)
+        Me.Guna2Button_close.Name = "Guna2Button_close"
+        Me.Guna2Button_close.ShadowDecoration.Parent = Me.Guna2Button_close
+        Me.Guna2Button_close.Size = New System.Drawing.Size(123, 36)
+        Me.Guna2Button_close.TabIndex = 9
+        Me.Guna2Button_close.Text = "关闭"
+        '
         'FormTableStrategyDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -201,6 +219,7 @@ Partial Class FormTableStrategyDetail
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Controls.Add(Me.Guna2Button_close)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.Guna2DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -224,4 +243,5 @@ Partial Class FormTableStrategyDetail
     Friend WithEvents Column_hasPkForIncrement As DataGridViewCheckBoxColumn
     Friend WithEvents Column_cleanCopy As DataGridViewCheckBoxColumn
     Friend WithEvents Column_pk As DataGridViewTextBoxColumn
+    Friend WithEvents Guna2Button_close As Guna.UI2.WinForms.Guna2Button
 End Class
