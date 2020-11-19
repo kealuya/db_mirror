@@ -44,6 +44,8 @@ func init() {
 				beego.NSRouter("/supply_all_db_info", &SupplyController{}, "post:GetAllDbSettingInfo"),
 				/*获取db备份信息，用于展示*/
 				beego.NSRouter("/supply_all_db_backup_info", &SupplyController{}, "post:GetAllDbbackupSettingInfo"),
+				/*获取备份策略是否执行中*/
+				beego.NSRouter("/supply_is_run", &SupplyController{}, "post:GetBackupIsRun"),
 			),
 		)
 	//注册 namespace

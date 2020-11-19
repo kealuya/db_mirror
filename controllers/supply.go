@@ -77,3 +77,41 @@ func (supplyCtrl *SupplyController) GetAllDbbackupSettingInfo() {
 	// 成功的场合
 	returnJson = returnValueMarshal(true, "获取所有DB备份配置信息成功", dbbackupSetting)
 }
+
+func (supplyCtrl *SupplyController) GetBackupIsRun() {
+	//初始化
+	var returnJson []byte
+	defer func() {
+		//返回值处理
+		supplyCtrl.Data["json"] = string(returnJson)
+		supplyCtrl.ServeJSON()
+	}()
+	var backup_db = new(entity.Backup_DB)
+	var backup_db_json_byte = supplyCtrl.Ctx.Input.RequestBody
+
+	//传入json转化对象
+	err := json.Unmarshal(backup_db_json_byte, &backup_db)
+	if err != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint("传入参数json转换失败:", err), nil)
+		return
+	}
+
+	backup_db, err_dbbackup := db.Sqlite_NewDb().Sqlite_GetDbbackupSetting(backup_db.BackupId)
+	if err_dbbackup != nil {
+		returnJson = returnValueMarshal(false, fmt.Sprint(err_dbbackup), nil)
+		return
+	}
+
+	_, ok := taskMap[backup_db.BackupId]
+	msg := ""
+	if ok {
+		msg = fmt.Sprintf("[%v：%s]数据备份正在运行", backup_db.BackupId, backup_db.Desc)
+		// 成功的场合
+		returnJson = returnValueMarshal(true, msg, true)
+	} else {
+		msg = fmt.Sprintf("[%v：%s]数据备份没有运行", backup_db.BackupId, backup_db.Desc)
+		// 成功的场合
+		returnJson = returnValueMarshal(true, msg, false)
+	}
+
+}
