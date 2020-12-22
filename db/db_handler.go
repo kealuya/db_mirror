@@ -1,6 +1,8 @@
 package db
 
 import (
+	"db_mirror/common"
+	. "db_mirror/entity"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego/logs"
@@ -11,8 +13,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"db_mirror/common"
-	. "db_mirror/entity"
 	"xorm.io/xorm"
 	"xorm.io/xorm/log"
 	"xorm.io/xorm/schemas"
@@ -162,7 +162,11 @@ func CopyDDL(backupDb Backup_DB) (createTableInfos []string, reErr error) {
 				ddl = strings.Replace(ddl, fmt.Sprintf(`CREATE TABLE "%s".`, strings.ToUpper(setting_from.Username)),
 					fmt.Sprintf(`CREATE TABLE "%s".`, strings.ToUpper(setting_to.Username)), -1)
 				// TABLESPACE "SZHTCL"   修改命名空间  追加了用户名变大写
-				ddl = strings.Replace(ddl, fmt.Sprintf(`TABLESPACE "%s"`, strings.ToUpper(setting_from.Username)),
+
+				reg, _ := regexp.Compile(`TABLESPACE ".*"`)
+				tablespace := reg.FindString(ddl)
+
+				ddl = strings.Replace(ddl, tablespace,
 					fmt.Sprintf(`TABLESPACE "%s"`, strings.ToUpper(setting_to.Username)), -1)
 
 				var createTableInfo string
@@ -361,6 +365,7 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 				// 获取目标表所有数据
 				sql1 := "select * from " + b.TableName
 				// 一次性获取所有 数据，集中处理
+				// TODO 当数据量巨大时，会造成内存饱和  预计打算逐条获取通过多协程处理
 				results_map_interface, err := engine_from.SQL(sql1).QueryInterface()
 				if err != nil {
 					errLogFunc(fmt.Errorf("备份[%s]表时发生错误::%s", b.TableName, err), sql1)
