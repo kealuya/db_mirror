@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 )
 
 type SettingController struct {
@@ -41,7 +42,7 @@ func (settingCtrl *SettingController) TestDb() {
 	}()
 	var setting = new(Setting)
 	var setting_json_byte = settingCtrl.Ctx.Input.RequestBody
-
+	logs.Info(setting_json_byte)
 	//传入json转化对象
 	err := json.Unmarshal(setting_json_byte, &setting)
 	if err != nil {
