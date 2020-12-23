@@ -3,6 +3,7 @@ package common
 import (
 	"bytes"
 	"crypto/md5"
+	"database/sql"
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
@@ -84,4 +85,29 @@ func StringToBase64(data string) string {
 func Base64ToString(data string) string {
 	ds, _ := base64.StdEncoding.DecodeString(data)
 	return string(ds)
+}
+
+//DBSQL的rows类型变成map类型
+func MakeRowToMap(r *sql.Rows, m map[string]interface{}) error {
+
+	clos, err1 := r.Columns()
+	if err1 != nil {
+		return err1
+	}
+
+	vv := make([]interface{}, len(clos))
+	for i, _ := range vv {
+		var a interface{}
+		vv[i] = &a
+	}
+	err2 := r.Scan(vv...)
+	if err2 != nil {
+		return err2
+	}
+	for i, v := range clos {
+		m[v] = *vv[i].(*interface{})
+	}
+
+	return nil
+
 }
