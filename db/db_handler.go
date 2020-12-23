@@ -365,8 +365,16 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 				// 获取目标表所有数据
 				sql1 := "select * from " + b.TableName
 				// 一次性获取所有 数据，集中处理
-				// TODO 当数据量巨大时，会造成内存饱和  预计打算逐条获取通过多协程处理
-				results_map_interface, err := engine_from.SQL(sql1).QueryInterface()
+				// 20201223 ----start
+				//当数据量巨大时，会造成内存饱和  预计打算逐条获取通过多协程处理
+				//results_map_interface, err := engine_from.SQL(sql1).QueryInterface() 删除，占内存太大
+				rows, err_QueryAllRows := engine_from.DB().Query(sql1)
+				if err_QueryAllRows != nil {
+					errLogFunc(fmt.Errorf("执行Query[%s]表时发生错误::%s", b.TableName, err_QueryAllRows), sql1)
+					goto wgFlg
+				}
+				// 20201223 ----end
+
 				if err != nil {
 					errLogFunc(fmt.Errorf("备份[%s]表时发生错误::%s", b.TableName, err), sql1)
 					goto wgFlg
@@ -376,7 +384,15 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 				*/
 				// 更新策略为主键更新，且该表拥有主key的情况下
 				if strategyMap["smartCopy"] && b.Key != "" {
-					for _, up := range results_map_interface {
+					//for _, up := range results_map_interface {
+					for rows.Next() {
+						up := make(map[string]interface{})
+						err_MakeRowToMap := common.MakeRowToMap(rows.Rows, up)
+						if err_MakeRowToMap != nil {
+							errLogFunc(fmt.Errorf("MakeRowToMap[%s]表时发生错误::%s", b.TableName, err_MakeRowToMap), "")
+							goto wgFlg
+						}
+
 						k := strings.Split(b.Key, ",")
 						where_sql := ""
 						for i, s := range k {
@@ -414,6 +430,7 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 							}
 						}
 						//logs.Info("表 ["+b.TableName+"] ", "通过pk::", where_sql, " 备份成功")
+
 					}
 				} else {
 					// 该表没有主key的情况下
@@ -428,15 +445,26 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 						errLogFunc(fmt.Errorf("备份[%s]表时发生错误::%s", b.TableName, err), sql5)
 						goto wgFlg
 					}
-					_, err := engine_to.Table(b.TableName).Insert(results_map_interface)
-					if err != nil {
-						sql4 := "tablename::" + b.TableName + " Insert::" + fmt.Sprintf("%+v", results_map_interface)
-						errLogFunc(fmt.Errorf("备份[%s]表时发生错误::%s", b.TableName, err), sql4)
-						goto wgFlg
+					for rows.Next() {
+						up := make(map[string]interface{})
+						err_MakeRowToMap := common.MakeRowToMap(rows.Rows, up)
+						if err_MakeRowToMap != nil {
+							errLogFunc(fmt.Errorf("MakeRowToMap[%s]表时发生错误::%s", b.TableName, err_MakeRowToMap), "")
+							goto wgFlg
+						}
+						_, err := engine_to.Table(b.TableName).Insert(up)
+						if err != nil {
+							sql4 := "tablename::" + b.TableName + " Insert::" + fmt.Sprintf("%+v", up)
+							errLogFunc(fmt.Errorf("备份[%s]表时发生错误::%s", b.TableName, err), sql4)
+							goto wgFlg
+						}
 					}
 					logs.Info("表 ["+b.TableName+"] ", "全插入成功")
 				}
 			wgFlg:
+				if rows != nil {
+					rows.Close()
+				}
 				wg.Done()
 			}
 		}()
@@ -450,7 +478,7 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 func countEqual(engine_from *xorm.Engine, engine_to *xorm.Engine, tableName string) bool {
 	mapStringInterfaceArray1, err := engine_from.SQL("select count(1) as num from " + tableName).QueryString()
 	if err != nil {
-		logs.Error(fmt.Errorf("查询[%s]表数据总量发生错误(from)::", tableName), "")
+		logs.Error(fmt.Errorf("查询[%s]表数据总量发生错误(from)::", tableName), err)
 		return false
 	}
 	mapStringInterface1 := mapStringInterfaceArray1[0]
@@ -458,7 +486,7 @@ func countEqual(engine_from *xorm.Engine, engine_to *xorm.Engine, tableName stri
 	from, _ := strconv.ParseInt(from_num, 10, 64)
 	mapStringInterfaceArray2, err := engine_to.SQL("select count(1) as num from " + tableName).QueryString()
 	if err != nil {
-		logs.Error(fmt.Errorf("查询[%s]表数据总量发生错误(to)::", tableName), "")
+		logs.Error(fmt.Errorf("查询[%s]表数据总量发生错误(to)::", tableName), err)
 		return false
 	}
 	mapStringInterface2 := mapStringInterfaceArray2[0]
