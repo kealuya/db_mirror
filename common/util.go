@@ -87,7 +87,9 @@ func Base64ToString(data string) string {
 	return string(ds)
 }
 
-//DBSQL的rows类型变成map类型
+/*
+  SQL的rows类型变成map类型
+*/
 func MakeRowToMap(r *sql.Rows, m map[string]interface{}) error {
 
 	clos, err1 := r.Columns()
