@@ -1,14 +1,14 @@
 package controllers
 
 import (
+	"db_mirror/db"
+	"db_mirror/entity"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
 	"github.com/robfig/cron"
 	"strings"
-	"db_mirror/db"
-	"db_mirror/entity"
 	"time"
 )
 
@@ -47,6 +47,7 @@ func (backupCtrl *BackupController) CopyDDL() {
 	returnJson = returnValueMarshal(true, "目标数据库DDL文执行成功", createTableInfo)
 }
 
+// 测试用方法，之后都使用RunByBackupId 处理
 func (backupCtrl *BackupController) GoCopy() {
 	//初始化
 	var returnJson []byte
@@ -107,6 +108,7 @@ func (backupCtrl *BackupController) RunByBackupId() {
 	}
 	// 执行方法制定
 	goCopyFunc := func() {
+		timelog := time.Now()
 		errLog, goCopy_err := db.GoCopy(*backup_db)
 		if goCopy_err != nil {
 			db.Sqlite_NewDb().Sqlite_SaveRunLog(backup_db.BackupId,
@@ -118,8 +120,9 @@ func (backupCtrl *BackupController) RunByBackupId() {
 					strings.Join(errLog, "\n"))
 			} else {
 				// 执行记录
+				o_time := time.Since(timelog)
 				db.Sqlite_NewDb().Sqlite_SaveRunLog(backup_db.BackupId,
-					"备份成功，没有发生错误")
+					"备份成功;用时:"+o_time.String())
 			}
 		}
 	}

@@ -13,6 +13,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 	"xorm.io/xorm"
 	"xorm.io/xorm/log"
 	"xorm.io/xorm/schemas"
@@ -291,6 +292,7 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 						"smartCopy":true
 					}
 				*/
+				time_log := time.Now()
 				strategyMap := make(map[string]bool)
 				if firstGo {
 					if b.Strategy == "" {
@@ -466,6 +468,7 @@ func GoCopy(backupDb Backup_DB, isFirst ...bool) (errlogs []string, reErr error)
 					rows.Close()
 				}
 				wg.Done()
+				logs.Info("表 ["+b.TableName+"] 耗时:", time.Since(time_log).String())
 			}
 		}()
 	}
